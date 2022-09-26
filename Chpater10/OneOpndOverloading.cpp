@@ -43,20 +43,20 @@ Point& operator--(Point& ref)
 	ref.xpos -= 1;
 	ref.ypos -= 1;
 	return ref;
-}	// 전역함수 기반 단항연산자++ 오버로딩
+}	// 전역함수 기반 단항연산자++ 오버로딩 , 전위감소
 
-const Point operator--(Point& ref, int)		// 전역함수 기반 후위증가 -- 
+const Point operator--(Point& ref, int)	// 매개변수 ref참조자가 const가 아니기 때문에 (pos--)--; 오류
 {
 	const Point obj(ref.xpos, ref.ypos);
 	ref.xpos -= 1;
 	ref.ypos -= 1;
 	return obj;
-}
+}	// 전역함수 기반 단항연산자-- 오버로딩, 후위감소
 
 int main(void)
 {
 	Point pos(3, 1);
-	++pos;
+	pos++;	// (pos++)++; 오류, (pos++)가 const형 // (pos++).operator++(int); , operator++(int)는 const 함수아님
 	pos.ShowPosition();
 	/*
 	[4,2]
