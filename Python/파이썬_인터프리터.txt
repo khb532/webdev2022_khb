@@ -1,0 +1,1 @@
+file - settings - project ailib - python iterpreter - 상단 클릭 - show all - 리스트 조작
