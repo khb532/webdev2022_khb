@@ -1,5 +1,0 @@
-﻿  C_14-1.c
-C:\Users\user\Desktop\C\C_14-1\C_14-1.c(14,10): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
-C:\Users\user\Desktop\C\C_14-1\C_14-1.c(14,10): message : 이 인수는 변환 지정자에서 사용됩니다.
-C:\Users\user\Desktop\C\C_14-1\C_14-1.c(19,9): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
-  C_14-1.vcxproj -> C:\Users\user\Desktop\C\C_14-1\Debug\C_14-1.exe
