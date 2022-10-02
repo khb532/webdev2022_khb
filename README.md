@@ -1,4 +1,6 @@
-# webdev2022_khb
+# Class : WebDev
 
-## WebDev2022_Temp // CPP_Prc
-### 2014108186 김홍범
+## Change use for REPORTS
+
+### 09.30 : gitignore add, commit reset
+### 10.10~10.14 ready
