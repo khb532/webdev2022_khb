@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>WebDev2022</artifactId>
+    <artifactId>SpringBoot-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>WebDev2022</name>
-    <description>WebDev2022</description>
+    <name>SpringBoot-project</name>
+    <description>SpringBoot-project</description>
     <properties>
         <java.version>19</java.version>
     </properties>
