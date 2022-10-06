@@ -16,10 +16,8 @@ do
 {
 	h = 0.5*g*power(t,2);
 	RedrawScene()	// 공과 바닥 다시 그리기
-	
-
-
-
+	t += 0.1;
+} while(h<=v);
 
 Rigidbody : 강체
 Component -> Physics -> Rigidbody
@@ -36,7 +34,11 @@ Interpolate : 물체의 움직임이 지나치게 끊겨 보일 경우 사용. �
 Collision Detection
 -Discrete : 현재 프레임의 위치만으로 충돌 검사, Tunneling 문제
 -Continuous : 이전 프레임과 현재 프레임 사이의 이동 궤적을 바탕으로 충돌 검사, 안정적인 충돌 검사 가능, 계산랑 증가, Rigidbody를 가진 물체엔 Discrete 충돌 검사, Rigidbody가 없는 물체엔 Continuous충돌 검사
--Continuous Dynamic : Continuous나 Continuous Dynamic이 적용된 물체, Rigidbody가 없는 물체, 많은 계산량
+-Continuous Dynamic : Continuous나 Continuous Dynamic이 적용된 물체, Rigidbody가 없는 물체, Discrete가 적용된 물체에는 Discrete 검사, 엄청 많은 계산량
 
 Constraints : 외력에 의한 움직임 제약부여
 Freeze position : 선택된 축 방향 이동 불가
+
+
+GetComponent<componentName>()
+: componentName 반환

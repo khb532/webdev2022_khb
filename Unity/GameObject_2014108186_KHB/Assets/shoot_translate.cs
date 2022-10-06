@@ -19,7 +19,9 @@ public class shoot_translate : MonoBehaviour
     {
         float distance_per_frame = speed * Time.deltaTime;
         float vertical_input = Input.GetAxis("Vertical");
-        float horizontal_input = Input.GetAxis("horizontal");
+        //Vertical : 상/하
+        float horizontal_input = Input.GetAxis("Horizontal");
+        //Horizontal : 좌/우
         Vector3 launch_direction = new Vector3(0,1,1);
 
         transform.Translate(Vector3.forward * vertical_input * distance_per_frame);
