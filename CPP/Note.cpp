@@ -10,5 +10,3 @@ C/C++ -
 #define _CRT_SECURE_NO_WARNINGS // scanf 무시
 
 scanf_s 이용
-
-// for commit
