@@ -1,0 +1,44 @@
+스칼라 : 크기만 있고 방향없음
+벡터 : 크기 방향 함께 존재
+Vector2 : 2차원
+Vector3 : 3차원
+
+OpenGL : 오른손 좌표계
+Unity, Unreal, Direct : 왼손 좌표계
+
+자유낙하 
+매 시간t마다 낙하한 거리 h = 0.5*gt^2
+t=0.0; // 시간
+v=6.0; // 공의 초기 높이
+g=9.8; // 중력가속도 상수
+
+do
+{
+	h = 0.5*g*power(t,2);
+	RedrawScene()	// 공과 바닥 다시 그리기
+	t += 0.1;
+} while(h<=v);
+
+Rigidbody : 강체
+Component -> Physics -> Rigidbody
+Mass : 물체의 질량
+Drag : 공기저항
+Angular Drag : 회전운동 저항, 마찰력과 유사한 움직임이지만 회전하는 물체에만 적용됨
+Use Gravity : 중력의 영향 여부, 없으면 물체가 낙하하지 않음
+Is kinematic : 물체에 가해지는 힘의 크기와 방향 등을 계산하지 않음. 물리엔진 무효, 충돌 체크는 수행. Transform을 통해서만 조작 가능
+Interpolate : 물체의 움직임이 지나치게 끊겨 보일 경우 사용. 물체의 연속된 움직임을 계산하는 방식
+-None : 아무런 보정 없음
+-Interpolate : 이전/다음 프레임의 Transform을 기반으로 근사
+-Extrapolate : 이전/그 이전 프레임의 Transform을 기반으로 근사
+
+Collision Detection
+-Discrete : 현재 프레임의 위치만으로 충돌 검사, Tunneling 문제
+-Continuous : 이전 프레임과 현재 프레임 사이의 이동 궤적을 바탕으로 충돌 검사, 안정적인 충돌 검사 가능, 계산랑 증가, Rigidbody를 가진 물체엔 Discrete 충돌 검사, Rigidbody가 없는 물체엔 Continuous충돌 검사
+-Continuous Dynamic : Continuous나 Continuous Dynamic이 적용된 물체, Rigidbody가 없는 물체, Discrete가 적용된 물체에는 Discrete 검사, 엄청 많은 계산량
+
+Constraints : 외력에 의한 움직임 제약부여
+Freeze position : 선택된 축 방향 이동 불가
+
+
+GetComponent<componentName>()
+: componentName 반환
