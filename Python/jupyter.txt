@@ -1,0 +1,5 @@
+python -m pip install --upgrade pip
+pip3 install jupyter
+
+python -m notebook 실행명령
+ http://localhost:8888/?token=88e424bc715ffbcbbab4ad0621ca9606356a6ede8d2a345a 토큰 접속
