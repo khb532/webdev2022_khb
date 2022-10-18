@@ -10,3 +10,8 @@ C/C++ -
 #define _CRT_SECURE_NO_WARNINGS // scanf 무시
 
 scanf_s 이용
+
+//C,C++ 기본 배열은 경계검사를 하지 않는다.
+int arr[3] = { 1,2,3 };
+cout << arr[-1] << endl;	// arr의 주소 + sizeof(int) * -1 위치에 접근
+
