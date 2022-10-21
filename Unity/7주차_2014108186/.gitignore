@@ -1,0 +1,12 @@
+*
+!.gitignore
+
+
+!Assets
+
+
+!*.cs
+!*.py
+!*.txt
+!*.cpp
+!*.c

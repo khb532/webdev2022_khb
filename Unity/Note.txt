@@ -1,3 +1,20 @@
+Mass : 오브젝트의 질량
+Drag : 힘에 의해 움직일때 공기저항이 미치는 영향정도
+Angular Drag : 토크로 회전할때 공기저항이 영향을 미치는 정도. 0이면 공기저항 없음. 무한으로 해도 무한으로 회전하지는 않음.
+
+Rigid Body : 강체. 나무/금속 등 단단한 재질로 구성. 부딪히면 튕기거나 부숴짐. Mass, Drag, Gravity
+Soft Body : 오브젝트를 구성하고 있는 메쉬의 형태가 변형됨. Cloth와 같은 Soft Body 기능이 제공됨.
+
+Physics Material 
+- Dynamic Friction : 물체의 면에 작용하는 운동 마찰력. 접촉면에서 움직이고 있을 때 받는 마찰력의 크기를 지정
+- Static Friction : 물체의 정지 마찰력. 멈춰있을때 외부의 힘으로부터 움직이지 않으려고 버티는 힘
+- Bounciness : 충돌시 반동을 지정. 0이면 무반동, 1이면 에너지 손실없이 무한 반동.
+- Friction Combine : 다른 물리 재질과 충돌할 경우 최종 마찰력을 어떻게 산출할지 결정. 
+	* Average : 두 값의 평균값 사용
+	* Multiply : 두 값을 곱한 결과
+	* Minimum : 두 값중 최소값
+	* Maximum : 최대값
+
 스칼라 : 크기만 있고 방향없음
 벡터 : 크기 방향 함께 존재
 Vector2 : 2차원
@@ -42,3 +59,10 @@ Freeze position : 선택된 축 방향 이동 불가
 
 GetComponent<componentName>()
 : componentName 반환
+
+scene_name : 장면 이름
+scene_index : 장면 인덱스
+
+mode : 선택적 ( 없으면 single)
+single : 현재장면 지우고 새 장면
+additive : 현재 장면위에 새 장면
