@@ -14,7 +14,7 @@ def load_csv(file):
     import pandas as pd  # 데이터 처리 모듈
     # CSV 파일 읽어오기
     imsi = pd.read_csv(file)
-    return imsi;
+    return imsi
 
 
 def show_files(f):
@@ -61,14 +61,15 @@ def plot(df, _x, _y, _color_filed):
 def boxplot(df, a, b):
     f, sub = plt.subplots(1, 1, figsize=(8, 6))
     sns.boxplot(x=df[a], y=df[b], ax=sub)
-    sub.set(xlabel=a, ylabel=b);
+    sub.set(xlabel=a, ylabel=b)
 
 
 # violin_plot(data_f, 'owner', 'leaf_length')
 def violin_plot(df, _x, _y):
     plt.figure(figsize=(8, 6))
     plt.subplot(1, 1, 1)
-    sns.violinplot(x=_x, y=_y, data=df)
+    sns.violinplot(data=df, x=_x, y=_y)
+    plt.show()
 
 
 # plot_3d('day', 'leaf_length', 'leaf_width')
@@ -80,6 +81,7 @@ def plot_3d(a, b, c):
     ax = fig.add_subplot(1, 1, 1, projection="3d")
     ax.scatter(data_f[a], data_f[b], data_f[c], c="blue", alpha=.5)
     ax.set(xlabel=a, ylabel=b, zlabel=c)
+    plt.show()
 
 
 def label2value(col):
@@ -91,9 +93,10 @@ def label2value(col):
 
 
 # heatmap(df, ['day', 'height', 'leaf_width', 'leaf_length', 'owner'])
-def heatmap(dataf, cols):
+def heatmap(data_f, cols):
     plt.figure(figsize=(12, 8))
     sns.heatmap(data_f[cols].corr(), annot=True)
+    plt.show()
 
 
 def split_4_parts(df, li, dap_col):
