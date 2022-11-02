@@ -66,3 +66,9 @@ scene_index : 장면 인덱스
 mode : 선택적 ( 없으면 single)
 single : 현재장면 지우고 새 장면
 additive : 현재 장면위에 새 장면
+
+
+IEnumerator 해당 함수의 쓰레드를 생성하여 별도로 동작
+
+WaitForSeconds(float duration)
+반드시 yield와 IEnumerator 함께 사용

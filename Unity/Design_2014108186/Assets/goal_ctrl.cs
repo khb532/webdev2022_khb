@@ -5,10 +5,14 @@ using UnityEngine;
 public class goal_ctrl : MonoBehaviour
 {
     private bool is_collided=false;
+
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        float x_r = Random.Range(5.0f, 10.0f);
+        float y_r = Random.Range(-3.0f, 1.0f);
+        this.transform.position = new Vector3(x_r, y_r, 0);
     }
 
     // Update is called once per frame
