@@ -5,9 +5,9 @@ using UnityEngine;
 public class spawn : MonoBehaviour
 {
     public GameObject pf_wall;
-    public float interval = 1.5f;
+    public float interval = Random.Range(1.0f, 2.0f);
 
-    // float rnd = Random.Range(-2.0f,2.0f);
+    // float rnd = Random.Range(-6.0f,4.0f);
 
     // Start is called before the first frame update
     IEnumerator Start()

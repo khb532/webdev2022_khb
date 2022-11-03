@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class player : MonoBehaviour
 {
 
-    public float jump_power = 5;
+    public 
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,7 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float jump_power = Random.Range(4.0f, 9.0f);
         if(Input.GetButton("Jump"))
         {
             GetComponent<Rigidbody>().velocity = new Vector3(0, jump_power, 0);
@@ -25,4 +26,9 @@ public class player : MonoBehaviour
     {
         SceneManager.LoadScene("main");
     }
+
+    /*void OnGUI()
+    {
+        GUI.Label (new Rect(Screen.width/2-30,80,100,20),jump_power.ToString());
+    }*/
 }
