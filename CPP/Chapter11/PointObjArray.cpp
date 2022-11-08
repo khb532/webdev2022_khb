@@ -16,6 +16,7 @@ ostream& operator<<(ostream& os, const Point& pos)
 	os << "[" << pos.xpos << ", " << pos.ypos << "]" << endl;
 	return os;
 }
+
 typedef Point* POINT_PTR;
 
 class BoundCheckPointArray
@@ -35,18 +36,18 @@ public:
 	}
 
 	// POINT_PTR& operator[](int idx) 
-	Point& operator[](int idx)
+	Point& operator[](int idx)	// const 오버로딩 - line 50
 	{
-		if (idx<0 || idx>arrlen)
+		if (idx<0 || idx>arrlen)	// 잘못된 index
 		{
 			cout << "Error : Arraylen" << endl;
 			exit(1);
 		}
-		return arr[idx];
+		return arr[idx];	// return Point[idx]
 	}
 	
 	// POINT_PTR operator[](int idx) const
-	Point operator[](int idx) const
+	Point operator[](int idx) const	// const 오버로딩 - line 39
 	{
 		if (idx<0 || idx>arrlen)
 		{
