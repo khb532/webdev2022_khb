@@ -14,6 +14,7 @@ private:
 public:
 	String();
 	String(const char* s);
+	String(const String& s);
 	~String();
 	String& operator=(const String& s);
 	String& operator+=(const String& s);
@@ -37,7 +38,14 @@ String::String(const char* s)
 	len = strlen(s) + 1;
 	str = new char[len];
 	strcpy(str, s);
-	// cout << "String(const char* s)" << endl;
+	cout << "String(const char* s)" << endl;
+}
+
+String::String(const String& s)
+{
+	len = s.len;
+	str = new char[len];
+	strcpy(str, s.str);
 }
 
 String::~String()
@@ -69,16 +77,21 @@ String& String::operator+=(const String& s)
 
 bool String::operator==(const String& s)
 {
-	if (strcmp(str, s.str))
-		return true;
-	else
+	if (strcmp(str, s.str))	// 같으면 0, 다르면 1
 		return false;
+	else
+		return true;
+	// return strcmp(str, s.str) ? false : true;
 }
 
 String String::operator+(const String& s)
 {
-	String tmp(strcat(str, s.str));
-	return tmp;
+	char* tmp = new char[len + s.len - 1];
+	strcpy(tmp, str);
+	strcat(tmp, s.str);
+	String tmp_s(tmp);
+	delete[] tmp;
+	return tmp_s;
 }
 ostream& operator<<(ostream& os, const String& s)
 {
@@ -93,11 +106,11 @@ istream& operator>>(istream& is, String& s)
 }
 
 int main(void)
-{	
+{
 	String str1("Hello");
 	String str2("World");
 
-	cout << str1 <<' '<< str2 << endl;
+	
 
 	return 0;
 }

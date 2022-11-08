@@ -17,6 +17,7 @@ public class player_ctrl : MonoBehaviour
     void Update()
     {
         if(Input.GetMouseButton(0))
+            // Jump Power
             power += power_plus * Time.deltaTime;
         if(Input.GetMouseButtonUp(0))
         {
@@ -25,6 +26,7 @@ public class player_ctrl : MonoBehaviour
         }
 
         if(this.transform.position.y <-5.0f||Input.GetMouseButton(1))
+            // 실패 혹은 마우스 우클릭 입력시 재시작
             SceneManager.LoadScene("main");
     }
 
