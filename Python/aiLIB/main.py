@@ -1,7 +1,8 @@
+import numpy as np
 import pandas as pd  # 데이터 처리 모듈
-# import pandas_profiling as pp
+import seaborn as sns
 import matplotlib.pyplot as plt  # 데이터 시각화 모듈
-
+# import pandas_profiling as pp
 from sklearn.model_selection import train_test_split  # 데이터 분할 모듈
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.neighbors import KNeighborsRegressor
@@ -10,22 +11,25 @@ from sklearn.ensemble import RandomForestRegressor
 
 data_frame = pd.read_csv('gld_price_data.csv')
 
-# hist그래프
-# lib.hist(data_frame)
+print(data_frame.head())
 
-# column으로 선택 가능한 목록
-# lib.show_cols(data_frame)
+data_frame.tail()
 
-# plot(data, X축, Y축, f(x)값)
-# lib.plot(data_frame, 'EUR/USD', 'SLV', 'GLD')
+data_frame.info()
+
+data_frame.isnull().sum()
+data_frame.describe()
+
+correlation = data_frame.corr()
+plt.figure(figsize = (8,8))
+sns.heatmap(correlation, annot = True)
+plt.show()
+"""
+sns.jointplot(x='SLV',y='GLD',kind='hex',data=data_frame)
+
+
 df = data_frame.drop(['SPX'],axis=1)
 df.plot()
-# pp.ProfileReport(data_frame)
-# violin_plot(data, x축, y축)
-# lib.violin_plot(data_frame, 'GLD', 'SLV')
-
-# heatmap(data, column배열)
-# lib.heatmap(data_frame, data_frame.columns)
 
 X = data_frame.drop(['Date','GLD','EUR/USD'],axis=1)  #axis = 0은 행, 1은 열 ,'EUR/USD','USO'
 Y = data_frame['GLD']
@@ -64,5 +68,6 @@ plt.xlabel('Number of values')
 plt.ylabel('GLD Price')
 plt.legend()
 plt.show()
-
+"""
 print("Clear")
+
