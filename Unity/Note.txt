@@ -72,3 +72,10 @@ IEnumerator 해당 함수의 쓰레드를 생성하여 별도로 동작
 
 WaitForSeconds(float duration)
 반드시 yield와 IEnumerator 함께 사용
+
+Raise or Lower Terrain : 페인트브러시 툴로 height맵을 페인팅
+Paint Textur : 표면 텍스처를 적용
+Set Height : height맵을 특정값으로 조정
+
+	brush size 범위
+	opacity 강도
