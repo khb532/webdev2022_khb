@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd  # 데이터 처리 모듈
+from patsy import dmatrix
 import seaborn as sns
 import matplotlib.pyplot as plt  # 데이터 시각화 모듈
 # import pandas_profiling as pp
@@ -11,19 +12,32 @@ from sklearn.ensemble import RandomForestRegressor
 
 data_frame = pd.read_csv('gld_price_data.csv')
 
-print(data_frame.head())
+# print(data_frame.head())
 
-data_frame.tail()
+# print(data_frame.tail())
 
-data_frame.info()
+# print(data_frame.info())
 
-data_frame.isnull().sum()
-data_frame.describe()
+# print(data_frame.isnull().sum())
+# print(data_frame.describe())
 
+df = data_frame.drop(['Date'], axis=1)
+
+df1 = df[['GLD', 'USO', 'SLV']] * 10
+df2 = df['EUR/USD'] * 100
+meg = pd.concat([df1, df2], axis=0)
+
+print(meg.head(5))
+
+# print(df.head(5))
+#
+
+"""
 correlation = data_frame.corr()
 plt.figure(figsize = (8,8))
 sns.heatmap(correlation, annot = True)
 plt.show()
+"""
 """
 sns.jointplot(x='SLV',y='GLD',kind='hex',data=data_frame)
 
