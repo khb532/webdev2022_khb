@@ -13,3 +13,5 @@
 !*.txt
 !*.cpp
 !*.c
+!*.pptx
+!*.pdf
