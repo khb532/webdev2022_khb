@@ -15,12 +15,14 @@ public class BamsongiCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         timer += Time.deltaTime;
         if(timer>0.05 && !is_shot)
         {
         Shoot(new Vector3(0,500,1000));
         is_shot = true;
-        }
+        }*/
+        
     }
 
     public void Shoot(Vector3 dir)
@@ -31,5 +33,7 @@ public class BamsongiCtrl : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         GetComponent<Rigidbody>().isKinematic = true;
+        // iskinematic : 물리력 무효
+        GetComponent<ParticleSystem>().Play();
     }
 }
