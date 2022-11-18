@@ -2,10 +2,7 @@
 !.gitignore
 
 
-
-!male_female
-!aiLIB
-
+!Assets
 
 
 !*.cs
@@ -13,5 +10,3 @@
 !*.txt
 !*.cpp
 !*.c
-!*.pptx
-!*.pdf
