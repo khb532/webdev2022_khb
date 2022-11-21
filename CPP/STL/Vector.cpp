@@ -103,14 +103,24 @@ int main(void)
 		}
 	}*/
 	// vector에서 insert, erase 등 원소를 변경하는 연산 후에는 현재의 begin, end 는 무효, 처음부터 다시 선언해야함
-	for (; begin_itr != end_itr; ++begin_itr)
+	//for (; begin_itr != end_itr; ++begin_itr)
+	//{
+	//	if (*begin_itr == 20) 
+	//	{
+	//		vec.erase(begin_itr);
+	//		begin_itr = vec.begin();	// begin_itr을 재 선언, 다만 처음부터 다시 탐색하게됨
+	//	}
+	//}
+	for (vector<int>::size_type i = 0; i != vec.size(); i++)
 	{
-		if (*begin_itr == 20) 
+		if (vec[i] == 20)
 		{
-			vec.erase(begin_itr);
-			begin_itr = vec.begin();	// begin_itr을 재 선언, 다만 처음부터 다시 탐색하게됨
+			vec.erase(vec.begin() + i);
+			i--;
 		}
 	}
+
+	// vector<int>::const_iterator = vec.cbegin() + 2;	const iterator가 가리키는 벡터값 변경 불가
 
 	for (vector<int>::size_type i = 0; i != vec.size(); i++)
 	{
