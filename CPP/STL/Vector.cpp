@@ -111,24 +111,35 @@ int main(void)
 	//		begin_itr = vec.begin();	// begin_itr을 재 선언, 다만 처음부터 다시 탐색하게됨
 	//	}
 	//}
-	for (vector<int>::size_type i = 0; i != vec.size(); i++)
+	/*for (vector<int>::size_type i = 0; i != vec.size(); i++)
 	{
 		if (vec[i] == 20)
 		{
 			vec.erase(vec.begin() + i);
 			i--;
 		}
-	}
+	}*/
 
 	// vector<int>::const_iterator = vec.cbegin() + 2;	const iterator가 가리키는 벡터값 변경 불가
+	// const_iterator 는 cbegin(), cend() ... c~()
+	// 반복자의 값을 변경하지않고 참조만 하는경우 사용
 
-	for (vector<int>::size_type i = 0; i != vec.size(); i++)
+	// reverse_iterator
+	// vector<int>::reverse_iterator r_itr = vec.rbegin();
+	// rbegin() : 마지막원소의 위치
+	// rend() : 첫 원소의 앞 위치
+	// reverse_iterator 는 rbegin(), rend() ... r~()
+
+	// const_reverse_iterator
+	// const_reverse_iterator 는 crbegin(), crend() ... cr~()
+
+	/*for (vector<int>::size_type i = 0; i != vec.size(); i++)
 	{
 		if (vec[i] == 20)
 		{
 			vec.erase(vec[i]);
 		}
-	}
+	}*/
 	
 
 	return 0;
