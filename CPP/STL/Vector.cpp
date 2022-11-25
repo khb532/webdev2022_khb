@@ -190,3 +190,20 @@ cout << v.front() << endl; //처음 요소 출력 : 0
 cout << v.back() << endl;  //마지막 요소 출력 : 4
 */
 
+
+
+// 범위 기반 for문
+
+for (int elem : vec)
+{
+	cout << "Element : " << elem << endl;
+}	// elem = vec[i]; 매 루프 반복
+
+template <typename T>
+void print_vector_range_based(vector<T>& vec)
+{
+	for (const auto& elem : vec)
+	{
+		cout << "Element : " << elem << endl;
+	}
+}	// 범위기반 벡터 전체 출력
