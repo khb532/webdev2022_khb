@@ -12,6 +12,24 @@ Vector와 달리 임의 위치 접근 불가
 [] 나 at 함수가 정의되있지 않음
 */
 
+template<typename T>
+void print_list(list<T>& lst)
+{
+	// for (list<int>::size_type i = 0; i < lst.size(); i++)
+	for (list<int>::iterator itr = lst.begin(); itr != lst.end(); itr++)
+	{
+		cout << *itr << " ";
+	}
+	
+	/*for (const auto& elem : lst)
+	{
+		cout << elem << " ";
+	}*/
+	
+	
+	cout << endl;
+}
+
 int main(void)
 {
 	list<int> lst;
@@ -21,13 +39,32 @@ int main(void)
 	lst.push_back(30);
 	lst.push_back(40);
 
-	for (list<int>::iterator itr = lst.begin(); itr != lst.end(); ++itr)
-	{
-		cout << *itr << " ";
-	}
-	cout << endl;
+	print_list(lst);
+	
 	// List의 iterator는 ++, -- 연산밖에 없음.
 	// itr + 5 불가.
+
+	for (list<int>::iterator itr = lst.begin(); itr != lst.end(); itr++)
+	{
+		if (*itr == 20)
+		{
+			lst.insert(itr, 15);
+		}
+	}
+	cout << "===========" << endl;
+	print_list(lst);
+
+
+	for (list<int>::iterator itr = lst.begin(); itr != lst.end(); itr++)
+	{
+		if (*itr == 30)
+		{
+			itr = lst.erase(itr);	// erase() : 삭제한 원소 다음 itr을 반환
+		}
+	}
+
+	cout << "==========" << endl;
+	print_list(lst);
 
 
 	return 0;
