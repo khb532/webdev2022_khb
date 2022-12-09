@@ -7,13 +7,13 @@ public class player : MonoBehaviour
 {
 
     //private float jump_power = Random.Range(4, 9);
-    private float jump_power;   // 점프력
+    private float jump_power = 5.0f;   // 점프력
     private float time;         // 경과시간
     // Start is called before the first frame update
     void Start()
     {
         // 매 판마다 점프력이 4~9 사이 수치로 지정
-        jump_power = Random.Range(4.0f, 9.0f);
+        // jump_power = Random.Range(4.0f, 9.0f);
     }
 
     // Update is called once per frame
